@@ -11,6 +11,7 @@ const DELIVERIES_FILE_PATH = "./csv_data/deliveries.csv";
 const JSON_OUTPUT_FILE_PATH = "./public/data.json";
 const JSON_OUTPUT_FILE_PATH_SECOND = "./public/data_second.json";
 const JSON_OUTPUT_FILE_PATH_THIRD = "./public/data_third.json";
+const JSON_OUTPUT_FILE_PATH_FOURTH = "./public/data_fourth.json";
 const JSON_OUTPUT_FILE_PATH_FIFTH = "./public/data_fifth.json";
 
 function main() {
@@ -37,6 +38,7 @@ function main() {
 
         // 4th
         let resultEcoBowl= topEconomicalBowlers(deliveries);
+        savetopEconomicalBowlers(resultEcoBowl);
         // console.log(resultEcoBowl);
 
         // 5th
@@ -88,6 +90,20 @@ function saveextrarunsconcededbyeach(resultExRun) {
       console.error(err);
     }
   });
+}
+
+// 4th
+function savetopEconomicalBowlers(resultEcoBowl){
+  const jsonData = {
+    topEconomicalBowlers: resultEcoBowl
+  };
+  const jsonString = JSON.stringify(jsonData);
+  fs.writeFile(JSON_OUTPUT_FILE_PATH_FOURTH, jsonString, "utf8", err => {
+    if (err) {
+      console.error(err);
+    }
+  });
+
 }
 
 // 5nd

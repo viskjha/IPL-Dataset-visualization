@@ -1,5 +1,5 @@
 function topEconomicalBowlers(deliveries){
-    const result = {};
+    let result = {};
     const bowl = [];
     const run = [];
     for(let deliverie of deliveries){
@@ -28,19 +28,26 @@ function topEconomicalBowlers(deliveries){
 
     for(let r in run){
         // console.log(parseInt(run[r])/bowl[r]);
-        result[r] = parseInt(run[r])/bowl[r];
+        run[r] = parseInt(run[r])/bowl[r];
     }
 
-    // for(let res in result){
-    //     console.log(result[res]);
-    // }
 
-    // console.log(Object.keys(result));
-    
+    const test = [];
+    for(let rr in run){
+        test.push(run[rr])
+    }
+    test.sort(function(a, b){return a - b}).splice(10,test.length);
+    // console.log(test);
 
+    for(let rrr in run){
+        if(test.includes(parseFloat(run[rrr]))){
+            // console.log([rrr, run[rrr]]);
+            result[rrr] = run[rrr];
+        } 
+    }
     console.log(result);
 
-    // return run;
+    return result;
 }
 
 module.exports = topEconomicalBowlers;
