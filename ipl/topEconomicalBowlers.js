@@ -45,7 +45,10 @@ function topEconomicalBowlers(deliveries){
             result[rrr] = run[rrr];
         } 
     }
-    console.log(result);
+    // result = result.sort(function(a,b) {
+    //     return a.vao
+    // })
+    // console.log(result);
 
     return result;
 }

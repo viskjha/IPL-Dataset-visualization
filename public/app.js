@@ -316,7 +316,6 @@ function visualizetopEconomicalBowlers(topEconomicalBowlers) {
   }
 
   // console.log(seriesDataFourth);
-  seriesDataFourth.sort(function(a, b){return a - b})
 
   Highcharts.chart('top-10-economical-bowlers-2015', {
     chart: {
